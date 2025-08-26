@@ -22,9 +22,9 @@ d3.select('.bars')
         return d.population * 40e-6
     })
     .attr('y', function(d, i){
-        return i * 20 + 20
+        return i * 20 + 20        // +20
     })
-    .attr('x', function(d, i){
+    .attr('x', function(d, i){    // desplaza barras 340 pixeles mas abajo
     return  -340
     })
 
@@ -33,12 +33,13 @@ d3.select('.labels')
     .data(cities)
     .join('text')
     .attr('y', function(d, i){
-        return i * 20 + 30
+        return i * 20 + 30        //+30 para separar un poco mas
     })
-    .attr('x', function(d, i){
+    .attr('x', function(d, i){    // desplaza las labels 350 pixeles mas abajo
     return  -350
     })
     .attr('text-anchor', 'end') // alinea a la derecha
     .text(function(d){
         return d.name
+
     })
